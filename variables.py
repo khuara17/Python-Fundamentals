@@ -15,7 +15,7 @@ this is third line '''
 
 ########## Variable  ####################
 
-''' Variables are to store data '''
+''' Variables are containers to store data '''
 
 '''
 A variable name must start with a letter or the underscore character
@@ -45,7 +45,7 @@ Variable names are case-sensitive (age, Age and AGE are three different variable
 
 # Integer -: 0 - infinity -- real numbers
 # float :- 2.3 , 4.000 -- Decimal number
-# String :- "water567" or 'juice@#_' - Enclosed in qoutes
+# String :- "water567" or 'juice@_#' - Enclosed in qoutes
 
 
 ###### Type Casting #######

@@ -31,7 +31,7 @@ friendage = 24
 myage = "My age is {} and my friend age is {}".format(12,34)
 # x = myage.
 
-print(myage)
+# print(myage)
 
 
 # Method 2
@@ -45,4 +45,17 @@ price = 49.95
 
 # x = 
 
-print(f"I want to pay {'mystr****'} dollars for {itemno} pieces of item {price}")
+# print(f"I want to pay {'mystr****'} dollars for {itemno} pieces of item {price}")
+
+###### Functions for string ###############
+
+a = "hello world!"
+
+print(a.upper())
+print(a.lower())
+print(a.strip())
+print(a.replace("o","P"))
+print(a.split("o"))
+print(a.capitalize())
+print(a.count('l'))
+print(a.islower())

@@ -28,6 +28,10 @@ x += 4 # x = x +4 = 6+4 = 10
 # 1 2 4 8 16 32 64..........
 
 
+
+### Bitwise operator ##############
+
+# Bitwise Operator :- & ,  | , << , >> , ^
 # 64 32 16 8 4 2 1
 # 1 + 1 = 10, 1+ 1+1 =11
 # 0 + 0 = 0,
@@ -37,14 +41,24 @@ x += 4 # x = x +4 = 6+4 = 10
 # ----
 # 111 = 7     
 
-a = 4    ==  100 
-# Right Shift  101 = 010 =   001 = 0+ 0 + 1 = 1
 
-#Left Shift   101   # = 010 = 100 = 4    =    101000
-a <<= 1  #  1010
-# print(a)  
+a = 5   # ==  101 
+# Right Shift 0000 0101 = 0000 0010 =  0000 00001 = 0+ 0 + 1 = 1
+# a >>= 2
 
-
+#Left Shift  0000 0101  = 0000 1010 = 0001 0100 = 20
+a <<= 2  #  1010
+ 
+#XOR:- odd :- 1 and even :- 0 
+t = 5
+v = 7
+c = t ^ v 
+# 101             =   4 +  0 + 1 =   5  =   4 + 1   = 101
+# ^
+# 111              = 4 + 2 + 1 = 7
+# ----
+# 010 = 2
+# print(t) 
 ####### Comparison Operators ######## 
 
 ## Comparison Operators :- == , < , > , <= , >= 
@@ -61,10 +75,25 @@ a = 4
 
 ############# Logical Operators ######
 
-# Logical Operators :  and
+# Logical Operators :  and, or , not
 # True = 1 and False = 0 
 
 # 4 < 5 and 5 > 6 =  False  ## If either one of the condition is false the output will be False else True
 # 4 < 5 or 5 > 6 =  True   ## Either one of the condtion shoud be true.
 # 
-print(not(4 < 5 or 5 > 6))
+# print(not(4 < 5 or 5 > 6))
+
+######## Identity Operators ##############
+
+# Identity Operators : is , is not
+# mystring = 5
+# m = "hello"
+
+# print(m is not mystring)
+
+######## Membership Operators ##########
+
+#Membership Operators : in , not in
+m = "hello"
+
+print('helttl' not in m)
