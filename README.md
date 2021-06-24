@@ -1,6 +1,6 @@
 # Python-Fundamentals
 
-The Document representst the topic covered day wise.
+The Document represents the topic covered day wise.
 
 Day 1:- Introduction to python, Variables  
 Day 2:- Data Type, Type Casting  
