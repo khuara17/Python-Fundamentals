@@ -27,3 +27,26 @@ print(myls[-1])
 #         x = ls[y]
 #     y+=1
 # print(x)
+
+# Suppose x is defined as follows: 
+
+x = [ 'a','b', 
+    {
+        'foo': 1,
+        'bar': {
+                'x' : 10,
+                'y' : 20,
+                'z' : 30 },
+        'baz': 3 },
+        'c','d'] 
+
+# Is the following statement True or False? 
+#  x[2] = {
+#         'foo': 1,
+#         'bar': {
+#                 'x' : 10,
+#                 'y' : 20,
+#                 'z' : 30 },
+#         'baz': 3 }
+
+print('z' in x[2])

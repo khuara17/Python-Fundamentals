@@ -5,9 +5,37 @@
    4. Lists are written with square brackets.
    5. list can have any datatype in it.'''
 
+   ############# List Methods ###############
+'''
+     Method	    Description
+
+    append()	Adds an element at the end of the list
+    clear()	    Removes all the elements from the list
+    copy()	    Returns a copy of the list
+    count()	    Returns the number of elements with the specified value
+    extend()	Add the elements of a list (or any iterable), to the end of the current list
+    index()	    Returns the index of the first element with the specified value
+    insert()	Adds an element at the specified position
+    pop()	    Removes the element at the specified position
+    remove()	Removes the item with the specified value
+    reverse()	Reverses the order of the list
+    sort()	    Sorts the list
+'''
+
+############## Special Methods #############
+
+mylist2 = [5,2,80,0,2.4]
+mylist3 = ['v','p','hello','hi']
+# x = mylist2.copy()
+# print(mylist2.count(0))
+# print(mylist2.index(0))
+# mylist2.reverse()
+# print(mylist2[::-1])
+mylist3.sort(reverse=True)
+# print(mylist3)
+############ Defination ##########
 
 mylist = [2,'hello',[2,['hi',4.5],4],True,(2,0)]
-mylist2 = [0,'world']
 
 # print(len(mylist[2]))
 
@@ -47,6 +75,14 @@ mylist2 = [0,'world']
     2. Tuple items are unchangeable(Immutable), and allow duplicate values.
     3. Tuples are written with round brackets. '''
 
+
+'''
+
+Method	        Description
+count()	    Returns the number of times a specified value occurs in a tuple
+index()	    Searches the tuple for a specified value and returns the position of where it was found
+'''
+
 mytuple = (2,  2, 3.4,3.4,   'tuple',  True,  [2,3]  ,  ('hi',6.7) )
 
 # print(mytuple[0:4])
@@ -60,7 +96,7 @@ mytuple = (2,  2, 3.4,3.4,   'tuple',  True,  [2,3]  ,  ('hi',6.7) )
 # print(mylist4)
 
 ######## Unpacking ############
-# mytuple = (2,3,4)
+# mytuple = (2,3,4,5)
 
 (first,*second,third) = mytuple
 # print(first,second,third)
@@ -86,9 +122,20 @@ mytuple = (2,  2, 3.4,3.4,   'tuple',  True,  [2,3]  ,  ('hi',6.7) )
 
 
 ########### Set ##################
-''' 1. Set items are unchangeable(Immutable), and do not allow duplicate values.
+''' 1. Set items are unchangeable(Immutable), and do not allow duplicate values and unordered.
     2. Sets are written with curly brackets.. '''
 
+
+'''
+Method	        Description
+add()	    Adds an element to the set
+clear()	    Removes all the elements from the set
+copy()	    Returns a copy of the set
+discard()	Remove the specified item
+pop()	    Removes an element from the set
+remove()	Removes the specified element
+update()	Update the set with the union of this set and others
+'''
 myset = { 2, 2, 3.4,   'tuple',  True ,  ('hi',6.7)}
 myset2  =  { 8,9}
 # myset[2] = 4
@@ -116,6 +163,22 @@ myset.pop()
     4. For keys we can have only non-iterable data types
     5. For values we can have any data type. '''
 
+
+'''
+Method	            Description
+clear()	        Removes all the elements from the dictionary
+copy()	        Returns a copy of the dictionary
+fromkeys()	    Returns a dictionary with the specified keys and value
+get()	        Returns the value of the specified key
+items()	        Returns a list containing a tuple for each key value pair
+keys()	        Returns a list containing the dictionary's keys
+pop()	        Removes the element with the specified key
+popitem()	    Removes the last inserted key-value pair
+setdefault()	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+update()	    Updates the dictionary with the specified key-value pairs
+values()	    Returns a list of all the values in the dictionary
+'''
+
 # mylist[1] = [3,4]
 
 # int , x= 6
@@ -131,14 +194,20 @@ myset.pop()
 #     'rice' : 50
 # }
 
-# mydict = {
-#     1 : 'hello',
-#     'hello' : 4,
-#     3.4 : [2,3,[4,5],(2,3)],
-#     'key' : True,
-#     'key' : 4
-# }
-
+mydict = {
+    1 : 'hello',
+    'hello' : 4,
+    3.4 : [2,3,[4,5],(2,3)],
+    'key' : True,
+    'key' : 4,
+    'dict' : {
+        1 : 'word',
+        2 : {
+            3 : 'foo'
+        }
+    }
+}
+# print(mydict['dict'][2])
 ########## Accessing an element of dict ############
 # mydict[3.4]  = 
 # temp = [2,3,[4,5]]
@@ -178,6 +247,13 @@ mydict = {
 # for i in mydict.items():
 #     m,n = i
 #     print(m,n)
+# x = ('key1','key2','key3')
+# y = (0,0,0)
+# mydict = dict.fromkeys(x,y)
+mylist = [2,3,4]
+# for i in mylist:
+#     print(mydict[i])
+print(mydict.get(2))
 
 
 ############### Applying Loops on data stuctures #############
@@ -191,29 +267,3 @@ sum = 0
 
 # while i in ls:
 #     print(i)
-
-# Write a program to find the maximum element in the list without using inbuilt function
-
-myls = [3,5,6,7,8]
-print(max(myls))
-max=-1
-# for i in ls:
-#     if i>max:
-#         max=i
-# print(max)
-
-for i in range(len(myls)):
-    if myls[i] > max:
-        max= myls[i]
-print(max)
-
-# ls = [3,5,6,9,7,8]
-# x = 0
-# y = 0
-# while y < len(ls):
-#     if x >= ls[y]:
-#         pass
-#     else:
-#         x = ls[y]
-#     y+=1
-# print(x)
