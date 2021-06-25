@@ -54,8 +54,8 @@ try:
 #     print("ZeroDivisionError has occured...")
 except Exception as e:
     print("Some Error has occured..."+str(e))
-# else:
-#     print("I am else part")
+else:
+    print("I am else part")
 # except KeyError as i:
 #     print("Keyerror has occured"+ str(i))
 # except IndentationError:
