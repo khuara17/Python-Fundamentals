@@ -109,10 +109,28 @@ Sample Input    Expected Output
 1, 5, 7                 -1
 
 '''
-def find_product(num1,num2,num3,num4):
-    args = []
+# def find_product(num1,num2,num3,num4):
+#     args = []
+#     # args = args + [num1,num2,num3]
+#     args.extend([num1,num2,num3,num4])
+#     product = 1
+#     if 7 in args:
+#         j = args.index(7)
+#         if j is len(args)-1:
+#             return -1
+#     else:
+#         j = -1
+
+#     for i in range(j+1,len(args)):
+#         product *= args[i]
+
+#     return product
+    # print(args)
+
+def find_product(*args):
+    # args = []
     # args = args + [num1,num2,num3]
-    args.extend([num1,num2,num3,num4])
+    # args.extend([num1,num2,num3,num4])
     product = 1
     if 7 in args:
         j = args.index(7)
@@ -125,9 +143,7 @@ def find_product(num1,num2,num3,num4):
         product *= args[i]
 
     return product
-    # print(args)
-
-product = find_product(7,1,5,9)
+product = find_product(7,1,5,9,2)
 print("The result is:",product)
 # ls = [1,4,7]
 # def find_product(num1,num2,num3):

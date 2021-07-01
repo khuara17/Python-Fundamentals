@@ -54,7 +54,36 @@ def calculator(a,b,c):
 
 # print(f"Output of Operaion is: {res}. ")
 
+############# Arbitrary Arguments, *args ###########
+'''
+1. If you do not know how many arguments that will be passed into your function,
+    add a * before the parameter name in the function definition.
+2. It will create a tuple of values.    
+'''
 
+def addition(t,*numbers):
+    sum = 0
+    for i in numbers:
+        sum += i
+    return sum,t, type(numbers)
+
+# print(addition(2,3,4,5))
+
+############ Keyword Arguments, **kwargs ###########
+'''
+1. You can also send arguments with the key = value syntax.
+2. It will create a dictonary of key-value pairs.
+'''
+
+def averageMarks(**marks):
+    average = 0
+    for i in marks.values():
+        average += i
+    # average = (marks['ravi']+marks['sangeeta']+marks['anmol'])/3
+    average /= len(marks)
+    # print(marks)
+    return average
+print(averageMarks(ravi=30,sangeeta=78,anmol=80))
 
 ############# Problem 1 ################
 ''' Write a function that stutters a word as if someone is struggling to read it. 
@@ -225,6 +254,6 @@ def myfunction():
     # x = x + y
     print(y)
 
-myfunction()
-print(y)
+# myfunction()
+# print(y)
 # print(x)

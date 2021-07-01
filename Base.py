@@ -1,5 +1,5 @@
-'''
-Advantages of Importing : 
+################# Advantages of Importing : ##########
+''' 
 1. Makes code organised and cleaner.
 2. Less wastage of storage or memory.
 3. Makes code run faster.
@@ -16,7 +16,7 @@ Advantages of Importing :
 # from Importfile import *
 # from Importfile import circle,pi
 # import Importfile
-# from myapp.Importfile import *
+# from myfolder.myapp.Importfile import *
 
 # r = int(input("Enter the radius of circle: "))
 r = 2
