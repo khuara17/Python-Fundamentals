@@ -58,7 +58,7 @@ def factorial(n):
     else:
         return n*factorial(n-1)
 
-print(factorial(4))
+# print(factorial(4))
 
 
 
@@ -114,10 +114,10 @@ def addition_Rec(n):
 # print(addition_Rec(3))
 
 
-# |   |
+# |                      |
 # | 2 + addition_Rec(1)  |
 # | 3 + addition_Rec(2)  |
-# |___|
+# |___                   |
 
 
 
@@ -134,6 +134,56 @@ def addition_Rec(n):
 
 '''Write a program to display first n elements of fibonacci series 
 
-0 1 1 2 3    5 8 13 21 ..................
+0 1 1  2 3 5                             8 13 21 ..................
 
+1 2 3 4 5 6
 '''
+def fibonacci(n): # n = no of elements
+    if n == 1:
+        return 1
+    elif n < 0:
+        return 0
+    elif n == 0:
+        return 0
+    else:
+        return fibonacci(n-1)+fibonacci(n-2)
+n = 4
+for i in range(n):
+    print(fibonacci(i))        
+
+
+
+#                                           fibonacci(3)   == 2   
+#                   fibonacci(2)  == 1                +               fibonnaci(1) == 1    
+#               
+#               fibonaaci(1) + fibonaaci(0)                         1
+
+#                   1               0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# n=int(input("Enter value of n:"))
+# def fibonacci(n):
+#     if n<=1:
+#         return n
+#     else:
+#         return (fibonacci(n-1)+fibonacci(n-2))
+# if n<=0:
+#     print("Enter a positive integer")
+# else:
+#     print("Fibonacci series:")
+#     for i in range(n):
+#         print(fibonacci(i))
