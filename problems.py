@@ -245,8 +245,8 @@ def calculate_bill_amount(food_type,quantity_ordered,distance_in_kms):
 
     return bill_amount
 
-bill_amount=calculate_bill_amount("N",2,7)
-print(bill_amount)
+# bill_amount=calculate_bill_amount("N",2,7)
+# print(bill_amount)
 
 
 # def calculate_bill_amount(food_type,quantity_ordered,distance_in_kms):
@@ -339,3 +339,95 @@ print(bill_amount)
 # print(bill_amount)
 
 # 150 * 2 = 300 + 6 = 306
+
+
+
+''''
+You are keeping score for a baseball game with strange rules. The game consists of several rounds,
+ where the scores of past rounds may affect future rounds' scores.
+
+At the beginning of the game, you start with an empty record. You are given a list of strings ops,
+ where ops[i] is the ith operation you must apply to the record and is one of the following:
+
+1. An integer x - Record a new score of x.
+2. "+" - Record a new score that is the sum of the previous two scores. 
+It is guaranteed there will always be two previous scores.
+3. "D" - Record a new score that is double the previous score. It is guaranteed there will always be
+ a previous score.
+4. "C" - Invalidate the previous score, removing it from the record. 
+It is guaranteed there will always be a previous score.
+
+Return the sum of all the scores on the record.
+
+Input: ops = ["5","2","C","D","+"]
+Output: 30
+'''
+
+# myresult = 5  10 15 = 30
+
+
+# records= [5]
+# last = 1
+
+# def calsum(ops):
+#     records = [] 
+#     last = -1
+#     for i in ops:
+#         if i.lstrip('-').isdigit():
+#             records.append(int(i))
+#             last += 1
+#         elif i == 'D':
+#             temp = records[last] * 2
+#             records.append(temp)
+#             last += 1
+#         elif i == 'C':
+#             records.pop()
+#             last -= 1
+#         elif i == '+':
+#             # temp = records[last] + records[last-1]
+#             records.append(records[last] + records[last-1])
+#             last += 1
+#     # print(records)
+#     return sum(records)
+
+def calsum(ops):
+    records = []
+    for i in ops:
+        if i == 'C':
+            records.pop()
+        elif i == 'D':
+            records.append(records[-1]*2)
+        elif i == '+':
+            records.append( records[-1] + records[-2]   )
+        else:
+            records.append(int(i))
+
+    return sum(records)
+
+
+
+ops = ["5","-2","C","D","+"]
+res = calsum(ops)
+print(res)
+
+# print('534'*2)
+
+
+'''
+Write a python program which finds the maximum number from num1 to num2 (num2 inclusive) based on the following rules.
+ 
+
+1. Always num1 should be less than num2
+
+2. Consider each number from num1 to num2 (num2 inclusive). Populate the number into a list, if the below conditions are satisfied
+
+      a. Sum of the digits of the number is a multiple of 3
+
+      b. Number has only two digits
+
+      c. Number is a multiple of 5
+
+3. Display the maximum element from the list
+
+In case of any invalid data or if the list is empty, display -1.
+'''
