@@ -10,19 +10,24 @@
 # class Graph:
 
 
-# x = point()
+# x = point() #x == Object of class , point() == Class Initialization.
 # print(x.__doc__)
+# x.y
 
 # def __str___
+
+# Variable :- Local Variables
+# Attributes  :- We define these with self.
 class Person:
     def __init__(self,age,gender):
         self.personAge = age
         # print("I got executed first")
+        # age = 45
     # print("I am after init..")    
     age = 56
     # name = 'Dhruv'
 
-    def greet(self):
+    def greet(self,name):
         print("Good afternoon Student....")
 
 person1 = Person(34,'Male')
@@ -32,7 +37,7 @@ person1.personAge = 45
 
 # print(person1.age)
 # print(person1.personAge)
-# print(person1.greet())
+# print(person1.greet('rohit'))
 
 
 class Myclass:
@@ -74,7 +79,8 @@ x = 4.5
 class ComplexNumber:
     def __init__(self,real,img) -> None:
         self.real = real
-        self.img = img       
+        self.img = img  
+        # print(real)     
 
     def CreateComplex(self) -> str:
         return f"{self.real} + {self.img}j"
@@ -115,9 +121,10 @@ class Mobile:
             return 'It will work perfectly'
 
 Iphone = Mobile('Apple',50000,5)
-print(Iphone.WillItWork())
+print(type(Iphone))
+# print(Iphone.WillItWork())
 ############## Everything in python is an object of a class ############
-# x = 'str'
-# print(type(x))
+x = 'hello'
+print(type(x))
 
 
