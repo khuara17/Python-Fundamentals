@@ -24,34 +24,34 @@ class Person:
         # print("I got executed first")
         # age = 45
     # print("I am after init..")    
-    age = 56
+    # age = 56
     # name = 'Dhruv'
 
     def greet(self,name):
         print("Good afternoon Student....")
 
-person1 = Person(34,'Male')
+# person1 = Person(34,'Male')
 
-person1.age = 5
-person1.personAge = 45
+# person1.age = 5
+# person1.personAge = 45
 
 # print(person1.age)
 # print(person1.personAge)
 # print(person1.greet('rohit'))
 
 
-class Myclass:
-    def __init__(self,ls,dict,floatv):
-        self.ls = ls
-        self.dict = dict
-        self.flt = floatv
-        y = 30
+# class Myclass:
+#     def __init__(self,ls,dict,floatv):
+#         self.ls = ls
+#         self.dict = dict
+#         self.flt = floatv
+#         y = 30
 
-    x = 60
-    def newfunct(self):
-        print(self.ls)
-        # print(x)
-        # print(y)
+#     x = 60
+#     def newfunct(self):
+#         print(self.ls)
+#         # print(x)
+#         # print(y)
 
     
         
@@ -120,11 +120,68 @@ class Mobile:
         else:
             return 'It will work perfectly'
 
-Iphone = Mobile('Apple',50000,5)
-print(type(Iphone))
+# Iphone = Mobile('Apple',50000,5)
+# print(type(Iphone))
 # print(Iphone.WillItWork())
 ############## Everything in python is an object of a class ############
-x = 'hello'
-print(type(x))
+# x = 'hello'
+# print(type(x))
 
+
+###################### Passing objects to a class ###########
+
+
+class Player:
+    def __init__(self,name,age,sports,average=0,matches=0) -> None:
+        self.name = name
+        self.age = age
+        self.average = average
+        self.no_of_Matches =  matches
+        self.sports = sports
+
+class MyClass:
+    def __init__(self,ls) -> None:
+        self.ls = ls
+
+    def Maxage(self,sports):
+        # print(self.ls[0].age)
+        maxage = self.ls[0].age
+        # print(self.ls)
+        for objects in self.ls:
+            # print(objects.name)
+            if objects.age > maxage and objects.sports == sports:
+                maxage = objects.age
+
+        return maxage
+
+    def team(self):
+        myteam = []
+        for objects in self.ls:
+            if objects.average >= 60:
+                myteam.append(objects)
+        return myteam
+
+
+
+p1 = Player('virat',32,'cricket',60,100)
+p2 = Player('Federrer', 49, 'Tennis')
+p3 = Player('ABD',34,'cricket',67,120)
+p4 = Player('Sachin',40,'cricket',54,300)
+p4 = Player('virato',32,'cricket',62,100)
+
+# print(p1.age)
+
+ls = [p1,p2,p3,p4]
+
+myclass = MyClass(ls)
+
+print(myclass.Maxage('cricket'))
+res = myclass.team()
+for i in res:
+    print(i.name)
+
+########## 
+
+
+# [         <__main__.Player object at 0x7f4751b13198> ,            <__main__.Player object at 0x7f4751b131d0>, <__main__.Player object at 0x7f4751b13208>, <__main__.Player object at 0x7f4751b13240>]
 

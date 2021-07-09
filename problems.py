@@ -407,19 +407,23 @@ def calsum(ops):
 
 
 ops = ["5","-2","C","D","+"]
-res = calsum(ops)
-print(res)
+# res = calsum(ops)
+# print(res)
 
 # print('534'*2)
 
 
 '''
-Write a python program which finds the maximum number from num1 to num2 (num2 inclusive) based on the following rules.
+Write a python program which finds the maximum number from num1 to num2 
+(num2 inclusive) based on the following rules.
  
 
 1. Always num1 should be less than num2
 
-2. Consider each number from num1 to num2 (num2 inclusive). Populate the number into a list, if the below conditions are satisfied
+# 8 -> 15 =  
+# 12 = 1 +2 = 3
+2. Consider each number from num1 to num2 (num2 inclusive). Populate the number
+ into a list, if the below conditions are satisfied
 
       a. Sum of the digits of the number is a multiple of 3
 
@@ -431,3 +435,26 @@ Write a python program which finds the maximum number from num1 to num2 (num2 in
 
 In case of any invalid data or if the list is empty, display -1.
 '''
+# number = 123
+
+def find_max(num1, num2):
+    ls = []
+    if num1 < num2:
+        for i in range(num1,num2+1):
+            if len(str(i)) == 2:
+                sum = 0
+                for digit in str(i):
+                    sum += int(digit)
+                if sum % 3 == 0:
+                    if i % 5 == 0:
+                        ls.append(i)
+        return max(ls)
+    else:
+        return -1
+
+
+max_num=find_max(10,15)
+print(max_num)    
+
+# 10 11 12 13 14 15
+
