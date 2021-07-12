@@ -80,16 +80,16 @@ class Student:
 
 
 
-s1=Student(2,67,21)
-print(s1.validate_marks())
-print(s1.validate_age())
-print(s1.check_qualification())
+# s1=Student(2,67,21)
+# print(s1.validate_marks())
+# print(s1.validate_age())
+# print(s1.check_qualification())
 
 
-s2 = Student(2,36,28)
-print(s2.validate_marks())
-print(s2.validate_age())
-print(s2.check_qualification())
+# s2 = Student(2,36,28)
+# print(s2.validate_marks())
+# print(s2.validate_age())
+# print(s2.check_qualification())
 
 
 # id = int(input("Enter Student Id"))
@@ -123,3 +123,46 @@ print(s2.check_qualification())
 # s1 =  Student(id,name,age,marks)
 # print(s1.constraints(age,marks))
 # print(s1.validate_marks(marks))
+
+
+
+############ Problem 2 #####################
+
+'''Create a Student class and initialize it with name,age and roll number. 
+Make methods to :
+1. Display - It should display all informations of the student.
+2. setAge - It should assign age to student
+3. setMarks - It should assign marks to the student.
+
+Create another class called School, Pass 3 objects of student class and
+Create a method RollId and in that Print all the student id from school.
+
+'''
+
+class Student:
+    def __init__(self,name,age,roll) -> None:
+        self.name = name
+        self.age = age
+        self.roll = roll
+
+    def display(self):
+        print(self.name)
+        print (self.roll)
+        print(self.age)
+        # if self.marks != None:
+        #     print(self.marks)
+
+    def setAge(self,age):
+        self.age = age
+
+    def setMarks(self,marks):
+        self.marks = marks
+
+
+s1 = Student('Ria',20,3)
+s1.display()
+s1.setAge(50)
+s1.setMarks(89)
+print("After changing")
+s1.display()
+print(s1.marks)

@@ -167,7 +167,7 @@ p1 = Player('virat',32,'cricket',60,100)
 p2 = Player('Federrer', 49, 'Tennis')
 p3 = Player('ABD',34,'cricket',67,120)
 p4 = Player('Sachin',40,'cricket',54,300)
-p4 = Player('virato',32,'cricket',62,100)
+p5 = Player('virato',32,'cricket',62,100)
 
 # print(p1.age)
 
