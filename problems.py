@@ -453,8 +453,23 @@ def find_max(num1, num2):
         return -1
 
 
-max_num=find_max(10,15)
-print(max_num)    
+# max_num=find_max(10,15)
+# print(max_num)    
 
 # 10 11 12 13 14 15
 
+############### 
+def create_largest_number(ls):
+    ls.sort(reverse=True)
+    ans = ''
+    for i in ls:
+        ans += str(i)
+    # ls=list(map(str,ls))
+    # n="".join(ls)
+    print(int(ans))
+
+# 
+y = [23,54,67]
+create_largest_number(y)
+
+# 675423
