@@ -159,10 +159,85 @@ class Student:
         self.marks = marks
 
 
-s1 = Student('Ria',20,3)
-s1.display()
-s1.setAge(50)
-s1.setMarks(89)
-print("After changing")
-s1.display()
-print(s1.marks)
+# s1 = Student('Ria',20,3)
+# s1.display()
+# s1.setAge(50)
+# s1.setMarks(89)
+# print("After changing")
+# s1.display()
+# print(s1.marks)
+
+
+###################### 
+
+'''
+1. Which of the following keywords mark the beginning of the class definition?
+CLASS
+
+2.Which of the following statements is most accurate for the declaration x = Circle() ?
+x contains a reference to a Circle object.
+
+3.  Which of the following can be used to invoke the __init__ method in B from A, 
+    where A is a subclass of B? (Multiple Choice)
+
+super().__init__()  -C
+super().__init__(self)
+B.__init__()
+B.__init__(self)  -C
+
+
+4. Object and class attributes are accessed using ___ notation in Python.
+.
+
+5.  In Python, a function within a class definition is called a:
+Method
+
+6.Given the above code snippet, which of the following outputs are correct? (Multiple Choice)
+
+
+
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+class JackRussellTerrier(Dog):
+    pass
+
+class Dachshund(Dog):
+    pass
+
+class Bulldog(Dog):
+    pass
+
+miles = JackRussellTerrier("Miles", 4)
+buddy = Dachshund("Buddy", 9)
+jack = Bulldog("Jack", 3)
+jim = Bulldog("Jim", 5)
+
+-------------- : Options :----
+isinstance(jack, Dog)   False
+
+isinstance(miles, Bulldog) False     - C
+
+isinstance(miles, Dog) False
+
+isinstance(buddy, Bulldog) False    -C
+
+isinstance(miles, Dog) False
+
+isinstance(jack, Dachshund)  False    -C
+
+
+7. Which of the following statements is true?
+A class is blueprint for the object
+
+8. What does the __init__() the function do in Python?
+This function is called when a new object is instantiated.
+
+9. If you a class is derived from two different classes, it's called ______
+Multiple Inheritance
+
+10. An instance of a class.
+Object
+'''

@@ -473,3 +473,24 @@ y = [23,54,67]
 create_largest_number(y)
 
 # 675423
+
+################### Problem ####################
+'''
+Write a python program to display all the common characters between two strings. Return -1 if there are no matching characters.
+
+Note: Ignore blank spaces if there are any. Perform case sensitive string comparison wherever necessary.
+
+Sample Input                                Expected output
+
+"I like Python"
+"Java is a very popular language"               lieyon
+'''
+
+def find_common_characters(msg1,msg2):
+    pass #Remove pass and write your logic here
+
+#Provide different values for msg1,msg2 and test your program
+msg1="I like Python"
+msg2="Java is a very popular language"
+common_characters=find_common_characters(msg1,msg2)
+print(common_characters)
