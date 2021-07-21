@@ -469,14 +469,16 @@ def create_largest_number(ls):
     print(int(ans))
 
 # 
-y = [23,54,67]
-create_largest_number(y)
+# y = [23,54,67]
+# create_largest_number(y)
 
 # 675423
 
 ################### Problem ####################
 '''
-Write a python program to display all the common characters between two strings. Return -1 if there are no matching characters.
+Write a python program to display all the common characters between two strings. 
+
+Return -1 if there are no matching characters.
 
 Note: Ignore blank spaces if there are any. Perform case sensitive string comparison wherever necessary.
 
@@ -486,10 +488,47 @@ Sample Input                                Expected output
 "Java is a very popular language"               lieyon
 '''
 
-def find_common_characters(msg1,msg2):
-    pass #Remove pass and write your logic here
+# def find_common_characters(msg1,msg2):
+#     pass #Remove pass and write your logic here
 
-#Provide different values for msg1,msg2 and test your program
+# #Provide different values for msg1,msg2 and test your program
+# msg1="I like Python"
+# msg2="Java is a very popular language"
+# common_characters=find_common_characters(msg1,msg2)
+# print(common_characters)
+
+# def find_common_characters(msg1,msg2):
+#     s=""
+#     for i in msg1:
+#         if i==" ":
+#             pass
+#         elif i in msg2:
+#             s+=i
+#     if s=="":
+#         return -1
+#     else:
+#         return s
+
+# # #Provide different values for msg1,msg2 and test your program
+# msg1="I like Python"
+# msg2="Java is a very popular language"
+# common_characters=find_common_characters(msg1,msg2)
+# print(common_characters)
+
+def find_common_characters(msg1,msg2):
+    string = ''
+    for i in msg1:
+        if i in msg2:
+            if i not in string:
+                string = string + i
+    if(string):
+        return string.replace(" ","")
+    else:
+        return -1
+
+#msg1 = input('Enter 1st string: ')
+#msg2 = input('Enter 2nd string: ')
+
 msg1="I like Python"
 msg2="Java is a very popular language"
 common_characters=find_common_characters(msg1,msg2)

@@ -113,8 +113,6 @@ class Base3:
 
 class Derived(Base1,Base2,Base3):
     def __init__(self) -> None:
-        # Base1.__init__(self)
-        # Base2.__init__(self)
         print("Derived")
         super(Derived,self).__init__()
         print(self.myattr2)
@@ -156,6 +154,7 @@ class Child(Base):
 
     def setAge(self):
         print(self.age)
+
 class Grandchild(Child):
     def __init__(self,name,age,address) -> None:
         Child.__init__(self,name,age)
@@ -224,7 +223,7 @@ class Grandchild(Test,Child):
 
 ###################### Assignment #########
 
-# Create a classes that will be on real life examples for Multilevel and multiple inheritance
+# Create a classes that will be on real life examples for Multilevel and multiple inheritance.
 
 
 
@@ -253,8 +252,8 @@ class Bulldog(Dog):
     def speak(self):
          return "Arff!"
 
-bobo = Bulldog()
-print(bobo.speak())
+# bobo = Bulldog()
+# print(bobo.speak())
 
 
 
@@ -286,7 +285,7 @@ print(bobo.speak())
 class Dog:
     def walk(self):
          return "*walking*"
-
+    # MYVAR = 3
     def speak(self):
          return "Woof!"
 class JackRussellTerrier(Dog):
