@@ -533,3 +533,50 @@ msg1="I like Python"
 msg2="Java is a very popular language"
 common_characters=find_common_characters(msg1,msg2)
 print(common_characters)
+
+
+'''
+Write a python function to check whether three given numbers can form the sides of a triangle. 
+Hint: Three numbers can be the sides of a triangle if none of the numbers are greater than or equal to the sum of the other two numbers.
+'''
+
+def form_triangle(num1,num2,num3):
+    #Do not change the messages provided below
+    success="Triangle can be formed"
+    failure="Triangle can't be formed"
+
+    #Write your logic here
+
+    #Use the following messages to return the result wherever necessary
+    return success
+    return failure
+
+num1=3
+num2=3
+num3=5
+form_triangle(num1, num2, num3)
+
+
+'''
+Write a python function, encrypt_sentence() which accepts a message and encrypts it based on rules given below and returns the encrypted message.
+Words at odd position -> Reverse It
+Words at even position -> Rearrange the characters so that all consonants appear before the vowels and their order should not change
+
+Note: 
+
+Assume that the sentence would begin with a word and there will be only a single space between the words.
+
+Perform case sensitive string operations wherever necessary.
+
+Exmple :-
+
+the sun rises in the east    --> eht snu sesir ni eht stea
+'''
+
+                                                                                                                                                                                                                                                                                    
+def encrypt_sentence(sentence):
+    #start writing your code here
+
+sentence="The sun rises in the east"
+encrypted_sentence=encrypt_sentence(sentence)
+print(encrypted_sentence)

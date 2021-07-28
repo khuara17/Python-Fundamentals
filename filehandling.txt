@@ -1,0 +1,173 @@
+                                    *****File Handling in Python*****
+
+File handling is an important part of any web application.
+Python treats file differently as text or binary and this is important. 
+Each line of code includes a sequence of characters and they form text file.
+Each line of a file is terminated with a special character, called the EOL or End of Line characters like comma {,} or newline character. 
+It ends the current line and tells the interpreter a new one has begun.       
+Python has several functions for creating, reading, updating, and deleting files.
+
+Following are the methods in file handling:-
+# open() :- used to open file for specified function.
+# close() :- used to close the file.
+# read() :- used to read the file.
+# write() :- used to write the file.   
+
+# open() & read():-
+The key function for working with files in Python is the open() function.
+The open() function takes two parameters; filename, and mode.
+Following are the operations used in open() method:-
+
+# "r" - Read - Default value. Opens a file for reading, error if the file does not exist
+
+# "a" - Append - Opens a file for appending, creates the file if it does not exist
+
+# "w" - Write - Opens a file for writing, creates the file if it does not exist
+
+# "x" - Create - Creates the specified file, returns an error if the file exists
+
+Syntax--
+          f=open("python.txt")
+
+          f=open("python.txt","r")
+
+Example--
+          f=open("python.txt","r")
+          print(f.read())
+
+If you want to open the file from different location you have to put the address of that file
+          f=open("H:\demo.txt","r")
+
+In addition you can specify if the file should be handled as binary or text mode
+
+# "t" - Text - Default value. Text mode
+# "b" - Binary - Binary mode (e.g. images)         
+
+           f = open("python.txt")
+Because "r" for read, and "t" for text are the default values, you do not need to specify them.
+
+         f = open("python.jpg", "b")
+
+Note: Make sure the file exists, or else you will get an error.
+
+By default the read() method returns the whole text, but you can also specify how many characters you want to return:
+
+Example--
+Return the 5 first characters of the file:
+
+         f = open("python.txt", "r")
+         print(f.read(5))
+
+You can return one line by using the readline() method:
+
+Example--
+Read one line of the file:
+
+         f = open("python.txt", "r")
+         print(f.readline())
+By calling readline() two times, you can read the two first lines:
+
+Example--
+Read two lines of the file:
+
+         f = open("python.txt", "r")
+         print(f.readline())
+         print(f.readline())
+
+By looping through the lines of the file, you can read the whole file, line by line:
+
+Example--
+Loop through the file line by line:
+
+         f = open("python.txt", "r")
+         for x in f:
+          print(x)
+
+# close():-
+
+Example--
+Close the file when you are finish with it:
+
+         f = open("python.txt", "r")
+         print(f.readline())
+         f.close()
+
+Note: You should always close your files, in some cases, due to buffering, changes made to a file may not show until you close the file.
+
+# write():-
+
+Example--
+Open the file "python.txt" and append content to the file:
+
+         f = open("python.txt", "a")
+         f.write("Now the file has more content!")
+         f.close()
+
+#open and read the file after the appending:
+        f = open("python.txt", "r")
+        print(f.read())
+
+Example--
+Open the file "python.txt" and overwrite the content:
+
+         f = open("python.txt", "w")
+         f.write("Woops! I have deleted the content!")
+         f.close()
+
+#open and read the file after the appending:
+         f = open("python.txt", "r")
+         print(f.read())
+
+Note: the "w" method will overwrite the entire file.
+
+Create a New File
+To create a new file in Python, use the open() method, with one of the following parameters:
+
+"x" - Create - will create a file, returns an error if the file exist
+
+"a" - Append - will create a file if the specified file does not exist
+
+"w" - Write - will create a file if the specified file does not exist
+
+Example
+Create a file called "myfile.txt":
+
+         f = open("myfile.txt", "x")
+Result: a new empty file is created!
+
+Example--
+Create a new file if it does not exist:
+
+         f = open("myfile.txt", "w")
+
+Delete a File
+To delete a file, you must import the OS module, and run its os.remove() function:
+
+Example--
+Remove the file "myfile.txt":
+
+        import os
+        os.remove("myfile.txt")
+
+To avoid getting an error, you might want to check if the file exists before you try to delete it:
+
+Example--
+Check if file exists, then delete it:
+
+        import os
+        if os.path.exists("myfile.txt"):
+          os.remove("myfile.txt")
+        else:
+          print("The file does not exist")
+
+Delete Folder
+To delete an entire folder, use the os.rmdir() method:
+
+Example--
+Remove the folder "myfolder":
+
+import os
+        os.rmdir("myfolder")
+
+Note: You can only remove empty folders.
+

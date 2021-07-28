@@ -76,6 +76,104 @@ print(char_at_pos([2,4,6],"even"))
 '''if you are taking string then print() will be  print(char_at_pos("PYTHON","even"))'''
 
 
+'''Create a function that takes a "base number" as an argument. This function should return another function which takes a new argument, and returns the sum of the "base number" and the new argument.
+Please check the examples below for a clearer representation of the behavior expected.
+Examples
+# Calling make_plus_function(5) returns a new function that takes an input,
+# and returns the result when adding 5 to it.
+
+plus_five = make_plus_function(5)
+
+plus_five(2) ➞ 7
+
+plus_five(-8) ➞ -3'''
+
+'''solution'''
+
+def make_plus_function(base_num):
+    return lambda x:x+base_num
+
+x=make_plus_function(7)
+print(x(5))
+
+'''Create a function that takes a list containing only numbers and return the first element.
+Examples
+get_first_value([1, 2, 3]) ➞ 1
+
+get_first_value([80, 5, 100]) ➞ 80
+
+get_first_value([-500, 0, 50]) ➞ -500
+'''
+'''solution'''
+
+number_list = []
+n = int(input("Enter the list size "))
+
+print("\n")
+for i in range(0, n):
+    print("Enter number at index", i, )
+    item = int(input())
+    number_list.append(item)
+print("User list is ", number_list)
+def get_first_value(number_list):
+    if not number_list: return None
+    return number_list[0]
+
+print(get_first_value(number_list))
+
+'''Create a function that takes length and width and finds the perimeter of a rectangle.
+Examples
+find_perimeter(6, 7) ➞ 26
+
+find_perimeter(20, 10) ➞ 60
+
+find_perimeter(2, 9) ➞ 22
+
+'''
+'''solution'''
+
+def find_perimeter(length, width):
+    return length * 2 + width * 2
+x= find_perimeter(2,4)
+print(x)
+
+
+'''Building a Pie Chart
+A pie chart is a circular graphical representation of a dataset, 
+where each category frequency is represented by a slice (or circular sector) with an amplitude in degrees given by the single frequency percentage over the total of frequencies.
+You can obtain the degrees of sectors following these steps:
+•	Calculate frequencies total.
+•	Calculate percentage of every category frequency dividing it by the frequencies total.
+•	Transform every percentage in degrees multiplying it for 360.
+You are given a dictionary data with keys being the data categories (represented by letters) and values being the data frequencies. 
+Implement a function that returns a map to design a pie chart, like to say the same dictionary with values transformed in degrees instead of frequencies. 
+Round final values to the nearest tenth.
+ 
+Example
+pie_chart({ "a": 1, "b": 2 }) ➞ { "a": 120, "b": 240 }
+
+'''
+
+
+'''Solution 1'''
+def pie_chart(data):
+	total = sum(a for b,a in data.items())
+	for key in data:
+		data[key] *= 360/total
+		data[key] = round(data[key],1)
+	return data
+print(pie_chart({ "a": 1, "b": 2 }))
+
+'''Solution 2'''
+def pie_chart(data):
+	total = 0
+	for item in data:
+		total+=data[item]
+	for item in data:
+		data[item]=round(data[item]*360/total, 1)
+	return data
+print(pie_chart({  "a": 30, "b": 15, "c": 55  })) 
+
 
 
 
