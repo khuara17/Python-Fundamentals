@@ -241,3 +241,182 @@ Multiple Inheritance
 10. An instance of a class.
 Object
 '''
+
+############ Problem ##############
+
+'''
+Create a class that imitates a select screen. For simplicity, 
+the cursor can only move right!
+
+In the display method, return a string representation of the list,
+ but with square brackets around the currently selected element. 
+Also, create the method to_the_right, which moves the cursor one element to the right.
+
+The cursor should start at index 0.
+
+Notes
+The cursor should wrap back round to the start once it reaches the end.
+
+Examples
+menu = Menu([1, 2, 3])
+menu.display() ➞ "[[1], 2, 3]"
+menu.to_the_right()
+menu.display() ➞ "[1, [2], 3]"
+
+menu.to_the_right()
+menu.display() ➞ "[1, 2, [3]]"
+
+menu.to_the_right()
+menu.display() ➞ "[[1], 2, 3]"
+
+# '''
+class Menu:
+    def __init__(self,lst) -> None:
+        self.lst = lst
+        self.cursor = 0
+
+    def to_the_right(self):
+        # 0 + 1 = 1 % 3 = 1
+        # 1 + 1 = 2 % 3 = 2
+        # 2 + 1 = 3 % 3 = 0
+        self.cursor = (self.cursor + 1) % len(self.lst)
+
+    def display(self):
+        temp_lst = self.lst.copy()
+        # [[1], 2, 3]
+        temp_lst[self.cursor] = [ temp_lst[self.cursor]]
+        print(str(temp_lst))
+
+# menu = Menu([1, 2, 3])
+# menu.display() 
+# menu.to_the_right()
+# menu.display() 
+
+# menu.to_the_right()
+# menu.display() 
+
+# menu.to_the_right()
+# menu.display()
+
+
+
+
+
+'''
+Create a class with a couple of functions like these examples.
+
+magic.replace("string", 'char', char') is a function that replaces all of the specified characters with another characters.
+magic.str_length("string") is a function that returns the length of the string.
+magic.trim(" string ") is a function that returns a string that truncates spaces at both the beginning and end.
+magic.list_slice(list, tuple) is a function that returns the items in the list that are among the specified indexes. If the length of the new list is 0, return -1.
+Examples
+magic.replace("AzErty-QwErty", "E", "e") ➞ "Azerty-Qwerty"
+
+magic.str_length("hello world") ➞ 11
+
+magic.trim("      python is awesome      ") ➞ "python is awesome"
+
+magic.list_slice([1, 2, 3, 4, 5], (2, 4)) ➞ [ 2, 3, 4 ]
+'''
+
+class Magic:
+    def replace(self,str,char1,char2):
+        print(str.replace(char1,char2))
+
+    def str_length(self,str):
+        print(len(str))
+    
+    def trim(self,str):
+        print(str.strip())
+
+    def list_slice(self,l,t):
+        i,j=t
+        print(l[i-1:j])
+
+# magic=Magic()
+# magic.replace("AzErty-QwErty", "E", "e")
+# magic.str_length("hello world")
+# magic.trim("      python is awesome      ")
+# magic.list_slice([1, 2, 3, 4, 5], (2, 4))
+
+##############################
+
+'''
+Given a list of Person objects,
+
+create a function that sorts the list by an attribute name. 
+The attribute to sort by will be given as a string.
+
+The Person class will only include these attributes in the following order:
+    • firstname
+    • lastname
+    • age
+
+Examples
+p1 = Person("Michael", "Smith", 40)
+p2 = Person("Alice", "Waters", 21)
+p3 = Person("Zoey", "Jones", 29)
+
+
+people_sort([p1, p2, p3], "firstname") ➞ [p2, p1, p3]
+# Alice, Michael, Zoey
+
+people_sort([p1, p2, p3], "lastname") ➞ [p3, p1, p2]
+# Jones, Smith, Waters
+
+people_sort([p1, p2, p3], "age") ➞ [p2, p3, p1]
+# 21, 29, 40
+'''
+
+class Person:
+    def __init__(self,firstname,lastname,age) -> None:
+        self.firstname = firstname
+        self.lastname = lastname
+        self.age = age
+
+
+    # def people_sort():
+p1 = Person("Michael", "Smith", 40)
+p2 = Person("Alice", "Waters", 21)
+p3 = Person("Zoey", "Jones", 29)
+p4 = Person("Zoey", "Jones", 39)
+
+# print(p1.firstname)
+#[p1, p2, p3]
+def ex(x):
+    return x.firstname
+
+# lamda arguments : expression
+
+# def people_sort(lst,attr):
+#     if attr == 'firstname':
+#         # p1 
+#         result = sorted(lst,key= ex)
+#     elif attr == 'lastname':
+#         result = sorted(lst,key= lambda x : x.lastname )
+#     elif attr == 'age':
+#         result = sorted(lst,key= lambda x : x.age )
+
+#     return result
+
+def people_sort(lst,attr):
+    return sorted(lst,key= lambda x : getattr(x,attr))
+
+# res = people_sort([p1, p2, p3], "lastname")
+
+# for i in res:
+#     print(i.firstname)
+#     print(i.lastname)
+#     print(i.age)
+
+# Write a function that will take age as input and return all the attributes with larger age no
+
+def older(lst, age):
+    for obj in lst:
+        if obj.age >age:
+            print(obj.age)
+
+older([p1,p2,p3,p4],25)
+
+
+

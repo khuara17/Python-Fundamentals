@@ -80,9 +80,9 @@ mydoubler = myfunct(2)  # lambda a : a * 2
 
 x = ['ravi','ram','vishal',78,7.7]
 
-# y = enumerate(x,10)
+y = enumerate(x,10)
 
-# print(list(y))
+# print(type(y))
 
 # e,r,t=(3,4,5)
 
@@ -111,7 +111,58 @@ myls = ['a','b','c','d','e','t','i']
 # mtls[0:2]
 x = slice(1,7,3)
 
-print(myls[x])
+# print(myls[x])
 
 
+############### Sorted #################
+'''
+The sorted() function returns a sorted list of the specified iterable object.
 
+You can specify ascending or descending order. Strings are sorted alphabetically, and numbers are sorted numerically.
+
+Note: You cannot sort a list that contains BOTH string values AND numeric values.
+'''
+
+# Syntax
+# sorted(iterable, key=key, reverse=reverse)
+def example(tup):
+    return tup[0]
+# a = ("h", "b", "a", "c", "f", "d", "e", "g")
+# x = sorted(a, reverse=False)
+
+x = [(2,3),(89,5),(9,0)]
+# x = sorted(x, key=lambda tup:tup[0] , reverse=False)
+# print(x)
+
+# x.sort()
+############### Strip ##############
+'''
+Remove spaces at the beginning and at the end of the string:
+
+'''
+# txt = "     banana     "
+
+# x = txt.strip()
+
+# print("of all fruits", x, "is my favorite")
+
+################### getattr ################3
+'''
+The getattr() method returns the value of the named attribute of an object.
+If not found, it returns the default value provided to the function.'''
+'''
+The syntax of getattr() method is:
+getattr(object, name)
+
+
+The above syntax is equivalent to:
+object.name
+'''
+
+class Person:
+    age = 23
+    name = "Adam"
+
+person = Person()
+print('The age is:', getattr(person, "age"))
+print('The age is:', person.age)
