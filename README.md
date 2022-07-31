@@ -1,6 +1,6 @@
 # Python-Fundamentals
 
-The Document represents the topic covered day wise.
+The Repository represents the pyton topics with basic to advance.
 
 Day 1:- Introduction to python, Variables  
 Day 2:- Data Type, Type Casting  
